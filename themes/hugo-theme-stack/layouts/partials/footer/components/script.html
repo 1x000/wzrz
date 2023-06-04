@@ -1,0 +1,17 @@
+{{- partial "helper/external" (dict "Context" . "Namespace" "Vibrant") -}} {{-
+$opts := dict "minify" hugo.IsProduction -}} {{- $script := resources.Get
+"ts/main.ts" | js.Build $opts -}}
+
+<script type="text/javascript" src="{{ $script.RelPermalink }}" defer></script>
+
+{{ if .Page.Store.Get "hasMermaid" }}
+<script async defer src="https://cdn.bootcdn.net/ajax/libs/mermaid/9.4.3/mermaid.min.js"></script>
+<script>
+  addLoadEvent(function () {
+    mermaid.initialize({
+      theme:document.documentElement.dataset.scheme === "dark" ? "dark" : "default",
+      startOnLoad: true,
+    });
+  })
+</script>
+{{ end }}

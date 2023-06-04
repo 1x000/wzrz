@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- require APlayer -->
+    <link rel="stylesheet" href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css">
+    <script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script>
+    <!-- require MetingJS -->
+    <script src="https://lib.baomitu.com/meting/2.0.1/Meting.min.js"></script>
+</head>
+<body>
+    <div class="demo">
+        <div id="player1">
+        </div>
+    </div>
+    <script>
+        var ap = new APlayer
+            ({
+                element: document.getElementById('player1'),
+                fixed: true,
+                autoplay: false,
+                mini: true,
+                theme: '#f8f4fc',
+                loop: 'all',
+                order: 'random',
+                preload: 'auto',
+                volume: 0.5,
+                mutex: true,
+                listFolded: false,
+                listMaxHeight: 90,
+                lrcType: 0,
+                music:[
+                {
+                name:'超燃歌曲',
+                url:'/music/chaoran2077.mp3',
+                artists:'2077游戏公司',
+                cover:'/avatar.jpg'
+                },
+                {
+                name:'2077边缘行者1',
+                url:'/music/2077R.mp3',
+                artists:'2077游戏公司',
+                cover:'/avatar.jpg'
+                },
+                {
+                name:'2077边缘行者2',
+                url:'/music/2077.mp3',
+                artists:'2077游戏公司',
+                cover:'/avatar.jpg'
+                }
+                ]
+});
+        //ap.init();
+    </script>
+</body>

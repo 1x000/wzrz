@@ -1,0 +1,259 @@
+baseurl: https://blog.xpdbk.com #填你的网站地址awa
+languageCode: zh-cn
+theme: hugo-theme-stack
+paginate: 5 # 每页显示多少文章
+title: XiaoPangの小屋
+enableRobotsTXT: true
+enableEmoji: true
+enableGitInfo: true
+uglyURLs: false
+
+languages:
+    zh-cn:
+        languageName: 中文
+        title: XiaoPang的个人博客
+        description: XiaoPangLEl_FENG的个人博客,2b2t的玩家,1.8.9的玩家
+        weight: 1
+    en:
+        languageName: English
+        title: XiaoPang Blog
+        description: XiaoPang,LEl_FENG,Blog,1.8.9,2b2t,pvp,minecraft
+        weight: 2
+
+# 使用前将其更改为您的 Disqus 短名称
+disqusShortname: abaaba-cyou
+
+# Google Analytics（分析）跟踪 ID
+googleAnalytics: G-F7BV1R4CWR
+
+# 主题国际化支持
+# 可用值：ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh- tw
+DefaultContentLanguage: zh-cn
+
+# 如果 DefaultContentLanguage 在 [zh-cn image] 中，则将 hasCJKLanguage 设置为 true
+# 这将使 .Summary 和 .WordCount 对 CJK 语言正确运行。
+hasCJKLanguage: true
+
+permalinks:
+    post: /post/:slug
+    page: /:slug
+
+params:
+    mainSections:
+        - post #设置网站首页要展示的Section，一般设成post。这样就会默认展示post文件夹里面的内容。
+    featuredImageField: image
+    rssFullContent: true
+    favicon: /favicon.ico
+
+    footer:
+        since: 2022
+        customText: <a href="https://shengming.xpdbk.com/" target="_blank" >本站声明</a>
+                    <a href="https://blog.xpdbk.com/sitemap.xml" target="_blank" >站点地图</a>
+                    <a href="https://blog.xpdbk.com/index.xml" target="_blank" >RSS订阅</a>
+
+    dateFormat:
+        published: Jan 02, 2006
+        lastUpdated: Jan 02, 2006 15:04 MST
+
+    sidebar: #左边栏
+        compact: false
+        emoji: 😆‎
+        subtitle: 追随梦想需竭尽全力
+        avatar:
+            enabled: true
+            local: true
+            src: img/avatar.jpg
+
+    article:
+        math: false # 这里关闭是因为我们使用的是 MathJax
+        toc: true
+        readingTime: true
+        license:
+            enabled: true
+            default: Licensed under CC BY-NC-SA 4.0 转载或引用本文时请遵守许可协议，并注明出处不得用于商业用途！
+
+    comments: #评论
+        enabled: false
+        provider: waline
+
+        disqusjs:
+            shortname:
+            apiUrl:
+            apiKey:
+            admin:
+            adminLabel:
+
+        utterances:
+            repo:
+            issueTerm: pathname
+            label:
+
+        remark42:
+            host:
+            site:
+            locale:
+
+        vssue:
+            platform:
+            owner:
+            repo:
+            clientId:
+            clientSecret:
+            autoCreateIssue: false
+
+        # Waline客户端配置见：https://waline.js.org/en/reference/component.html
+        waline:
+            serverURL: https://pl.xpdbk.com
+            lang: zh-CN
+            pageview: false
+            emoji:
+                - https://unpkg.com/@waline/emojis@1.0.1/weibo
+            requiredMeta:
+                - name
+                - email
+                - url
+            locale:
+                admin: 管理员
+                placeholder: 有什么问题请评论
+
+        twikoo:
+            envId:
+            region:
+            path:
+            lang:
+
+        # 有关各种选项的描述，请参阅 https://cactus.chat/docs/reference/web-client/#configuration
+        cactus:
+            defaultHomeserverUrl: "https://matrix.cactus.chat:8448"
+            serverName: "cactus.chat"
+            siteName: "" # 您必须在此处插入一个与您注册的标识符匹配的唯一标识符（参见 https://cactus.chat/docs/getting-started/quick-start/#register-your-site）
+
+        giscus:
+            repo:
+            repoID:
+            category:
+            categoryID:
+            mapping:
+            lightTheme:
+            darkTheme:
+            reactionsEnabled: 1
+            emitMetadata: 0
+
+        gitalk:
+            owner:
+            admin:
+            repo:
+            clientID:
+            clientSecret:
+
+        cusdis:
+            host:
+            id:
+    widgets: #右边的小部件。注意search和archives还要进一步设置才能使用，参见前文
+        homepage:
+            - type: search
+            - type: archives
+              params:
+                  limit: 2
+            - type: categories
+              params:
+                  limit: 7
+            - type: tag-cloud
+              params:
+                  limit: 2
+        page:
+            - type: toc
+
+    opengraph:
+        twitter:
+            # 你的推特用户名
+            site: HuaweiH45278254
+
+            # 可用值：summary, summary_large_image
+            card: summary_large_image
+
+    defaultImage:
+        opengraph:
+            enabled: true
+            local: true
+            src: img/default.jpg
+
+    colorScheme:
+        # 显示切换
+        toggle: true
+
+        # 可用值：auto、light、dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+###自定义菜单
+### 参见 https://docs.stack.jimmycai.com/configuration/custom-menu.html
+### 要删除关于、存档和搜索页面的菜单项，请从其 FrontMatter 中删除 `menu` 字段
+menu:
+    main: []
+  
+    social:
+    - identifier: github
+      name: GitHub
+      url: https://github.com/1x000 #链接，文件夹的相对位置即可。
+      params:
+        icon: brand-github
+      newTab: true
+    - identifier: bilibili
+      name: Bilibili
+      url: https://space.bilibili.com/698092884
+      params:
+        icon: icons8-bilibili
+      newTab: true
+    - identifier: Youtube
+      name: Youtube
+      url: https://www.youtube.com/channel/UC6dL-SWu0VRfXOkUyCUF70Q
+      params:
+        icon: YouTube
+      newTab: true
+    - identifier: telegram
+      name: TG
+      url: https://t.me/LLLLLawa
+      params:
+        icon: Telegram_(software)-Logo.wine
+      newTab: true
+    - identifier: email
+      name: Email
+      url: mailto:huaweilaomke402@gmail.com
+      params:
+        icon: mail
+      newTab: true
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            ## 如果 Markdown 中有 HTML 内容，则设置为 true
+            unsafe: true
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
